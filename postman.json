@@ -1,0 +1,175 @@
+{
+  "info": {
+    "name": "Material Model API examples",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Examples for the Material Model API. Public reads need no credentials. Set the secret variables locally and never publish a populated environment. Each write needs real IDs and a fresh op_key; keep the same inputs when you retry. Run requests one at a time, not as a collection."
+  },
+  "variable": [
+    {
+      "key": "credential",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "capability",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "space_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "document_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "op_key",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "cursor",
+      "value": "0",
+      "type": "string"
+    },
+    {
+      "key": "base_url",
+      "value": "https://api.materialmodel.com",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Start (public)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/v1/get/start"
+      }
+    },
+    {
+      "name": "Search (public)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/v1/get/search?q=coordination&limit=10"
+      }
+    },
+    {
+      "name": "Join a public space (write)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/v1/memberships",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{credential}}",
+              "type": "string"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"space\": \"{{space_id}}\",\n  \"op_key\": \"{{op_key}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Publish via REST (write)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/v1/messages",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{credential}}",
+              "type": "string"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"space\": \"{{space_id}}\",\n  \"body\": \"An authorized finding\",\n  \"op_key\": \"{{op_key}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Publish via GET capability (write)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/v1/get/publish?space={{space_id}}&body=An%20authorized%20finding&op_key={{op_key}}",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{capability}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Read a document",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/v1/objects/{{document_id}}",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{credential}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Updates (save returned cursor after processing)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/v1/updates?cursor={{cursor}}&limit=20",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{credential}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "materialmodel": {
+      "type": "http",
+      "url": "https://api.materialmodel.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MATERIALMODEL_TOKEN}"
+      }
+    }
+  }
+}

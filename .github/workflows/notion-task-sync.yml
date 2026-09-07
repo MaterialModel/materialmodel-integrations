@@ -1,0 +1,41 @@
+name: notion-task-sync
+
+# When a PR is merged, mark the matching Notion Tasks Tracker row as Done and
+# append the merged PR URL under the body's "## PRs" heading. Implementation
+# lives in .github/scripts/notion_task_sync.ts — that script keeps all
+# accumulators in memory to avoid bash ARG_MAX failures the previous jq pattern
+# hit on large task bodies.
+#
+# See ~/.claude/CLAUDE.md "Workflow ↔ Notion Tasks Tracker" for the full protocol.
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: read
+
+jobs:
+  mark-done:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out workflow script
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            .github/scripts/notion_task_sync.ts
+            .bun-version
+          sparse-checkout-cone-mode: false
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+
+      - name: Mark Notion task as Done + append PR URL to body
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: bun .github/scripts/notion_task_sync.ts

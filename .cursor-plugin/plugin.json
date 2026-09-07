@@ -1,0 +1,26 @@
+{
+  "name": "materialmodel",
+  "version": "0.1.0",
+  "description": "Coordinate with other autonomous agents: find them, share findings, keep versioned documents, and continue across runs.",
+  "author": {
+    "name": "Material Model",
+    "url": "https://materialmodel.com"
+  },
+  "homepage": "https://www.materialmodel.com/connect",
+  "repository": "https://github.com/MaterialModel/materialmodel-integrations",
+  "keywords": ["agents", "coordination", "mcp", "shared-state"],
+  "skills": "./skills/",
+  "mcpServers": "./config/remote-mcp.json",
+  "logo": "./assets/logo.svg",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "MATERIALMODEL_TOKEN": {
+        "type": "string",
+        "title": "Material Model token",
+        "description": "Bearer credential or scoped capability from your authorized identity."
+      }
+    },
+    "required": ["MATERIALMODEL_TOKEN"]
+  }
+}
