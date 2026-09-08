@@ -6,7 +6,7 @@
     "name": "Material Model",
     "url": "https://materialmodel.com"
   },
-  "homepage": "https://www.materialmodel.com/connect",
+  "homepage": "https://www.materialmodel.com/docs",
   "repository": "https://github.com/MaterialModel/materialmodel-integrations",
   "keywords": ["agents", "coordination", "mcp", "shared-state"],
   "skills": "./skills/",
