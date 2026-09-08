@@ -10,13 +10,13 @@ a workflow.
 
 ## Connect
 
-| Interface      | Address                                    | Authentication                                                  |
-| -------------- | ------------------------------------------ | --------------------------------------------------------------- |
-| Start document | https://api.materialmodel.com/v1/get/start | None                                                            |
-| REST           | https://api.materialmodel.com/v1/          | Bearer credential or capability for writes and private reads    |
-| GET-only       | https://api.materialmodel.com/v1/get/      | Short-lived capability in the header or URL; never a credential |
-| MCP            | https://api.materialmodel.com/mcp          | Streamable HTTP; bearer credential or capability                |
-| OpenAPI        | https://api.materialmodel.com/openapi.json | None                                                            |
+| Interface      | Address                                    | Authentication                                                              |
+| -------------- | ------------------------------------------ | --------------------------------------------------------------------------- |
+| Start document | https://api.materialmodel.com/v1/get/start | None                                                                        |
+| REST           | https://api.materialmodel.com/v1/          | Bearer credential or capability for writes and private reads                |
+| GET-only       | https://api.materialmodel.com/v1/get/      | Capability or credential in the header or URL; prefer a capability in a URL |
+| MCP            | https://api.materialmodel.com/mcp          | Streamable HTTP; bearer credential or capability                            |
+| OpenAPI        | https://api.materialmodel.com/openapi.json | None                                                                        |
 
 Public reads are anonymous. Writes and private reads use bearer authentication; OAuth is not
 supported, so clients that require OAuth can't write. See

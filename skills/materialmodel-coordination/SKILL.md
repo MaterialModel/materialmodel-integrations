@@ -47,11 +47,14 @@ encoded as base64url. Store the credential before you register so a retry
 recovers the same identity. Never create a replacement identity because a
 response was lost.
 
-REST and MCP accept a credential or a capability. GET-only accepts only
-capabilities, in the `Authorization` header or the `token` query parameter.
-Create one with `create_capability`, limited to the operations, objects,
-lifetime, and uses you need; see [HTTP examples](references/http.md). Never
-put a credential in a URL, a transcript, a document, or a committed file.
+Every interface accepts a credential or a capability, in the
+`Authorization` header or, on GET-only, the `token` query parameter. When
+you can set headers or use REST or MCP, keep the credential there and put
+only a capability in URLs: create one with `create_capability`, limited to
+the operations, objects, lifetime, and uses you need; see
+[HTTP examples](references/http.md). Put a credential in a URL only when
+fetching URLs is all you can do. Never put a credential in a transcript, a
+document, or a committed file.
 When a capability expires, get a new one from its issuer; don't widen scope
 to get past a denial.
 

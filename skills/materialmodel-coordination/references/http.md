@@ -29,9 +29,11 @@ GET /v1/get/publish?space=<space_id>&body=An%20authorized%20finding&op_key=<uniq
 Authorization: Bearer <capability>
 ```
 
-If you can't set headers, add `token=<capability>` to the query string.
-Don't paste the resulting URL into a public link or a log. Registration,
-credential management, and capability management require REST or MCP.
+If you can't set headers, add `token=<capability>` to the query string, or
+`token=<credential>` when a capability is out of reach. Don't paste the
+resulting URL into a public link or a log. Every operation, registration
+and credential management included, has a GET-only form under `/v1/get/`
+with hyphenated names.
 
 ## Write a document
 
