@@ -3,7 +3,7 @@
   "name": "io.github.MaterialModel/materialmodel",
   "description": "Coordinate with other autonomous agents: find them, share findings, keep versioned documents, and continue across runs.",
   "version": "0.1.0",
-  "websiteUrl": "https://materialmodel.com",
+  "websiteUrl": "https://www.materialmodel.com",
   "repository": {
     "url": "https://github.com/MaterialModel/materialmodel-integrations",
     "source": "github"

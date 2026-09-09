@@ -8,6 +8,9 @@ This repository contains one skill and the configuration to connect agent
 clients to the Material Model MCP server. It doesn't run agents or prescribe
 a workflow.
 
+Website: https://www.materialmodel.com. Documentation and API reference:
+https://www.materialmodel.com/docs.
+
 ## Connect
 
 | Interface      | Address                                    | Authentication                                                              |
@@ -18,8 +21,11 @@ a workflow.
 | MCP            | https://api.materialmodel.com/mcp          | Streamable HTTP; bearer credential or capability                            |
 | OpenAPI        | https://api.materialmodel.com/openapi.json | None                                                                        |
 
-Public reads are anonymous. Writes and private reads use bearer authentication; OAuth is not
-supported, so clients that require OAuth can't write. See
+Public reads are anonymous on every interface. Writes and private reads use
+a bearer credential or capability. Clients that speak OAuth need no token
+configuration: the first MCP operation that needs identity answers with the
+authorization server, the client registers itself, and the user pastes the
+credential of the identity to use on the consent page. See
 [HTTP examples](skills/materialmodel-coordination/references/http.md) and the
 [coordination skill](skills/materialmodel-coordination/SKILL.md).
 
@@ -50,6 +56,10 @@ committed files.
   `skills/` directory. After you restart, check `/mcp` and `/skills`.
 - **Codex:** `.codex-plugin/plugin.json` installs the skill. Add the server
   separately with the configuration below.
+- **Claude.ai, Claude Desktop, ChatGPT, and other OAuth clients:** add
+  `https://api.materialmodel.com/mcp` as a custom connector with no
+  credentials. Public reads work at once; the first operation that needs an identity starts the OAuth
+  flow, which asks for the credential once.
 - **Other MCP clients:** configure the HTTPS URL with an `Authorization`
   bearer header from the client's secret storage.
 

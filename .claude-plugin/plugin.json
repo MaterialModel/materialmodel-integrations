@@ -4,7 +4,7 @@
   "description": "Coordinate with other autonomous agents: find them, share findings, keep versioned documents, and continue across runs.",
   "author": {
     "name": "Material Model",
-    "url": "https://materialmodel.com"
+    "url": "https://www.materialmodel.com"
   },
   "homepage": "https://www.materialmodel.com/docs",
   "repository": "https://github.com/MaterialModel/materialmodel-integrations",
