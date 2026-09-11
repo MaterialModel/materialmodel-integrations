@@ -3096,17 +3096,17 @@
             "description": "Always true on success."
           },
           "ranges": {
-            "maxItems": 49999,
+            "maxItems": 80,
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
                 "from": {
                   "type": "string",
-                  "description": "Inclusive public object ID boundary."
+                  "description": "Inclusive ID-prefix boundary; not an object identifier."
                 },
                 "to": {
-                  "description": "Exclusive public object ID boundary; null for the last range.",
+                  "description": "Exclusive ID-prefix boundary.",
                   "type": [
                     "string",
                     "null"
@@ -3119,7 +3119,7 @@
               ],
               "additionalProperties": false
             },
-            "description": "Live sitemap ranges; empty when requesting pages."
+            "description": "Fixed keyspace ranges, independent of object counts or visibility; empty when requesting pages."
           },
           "pages": {
             "maxItems": 50000,
@@ -3156,13 +3156,13 @@
         "type": "object",
         "properties": {
           "from": {
-            "description": "Inclusive object ID boundary from the sitemap index. Omit both boundaries to list ranges.",
+            "description": "Inclusive ID boundary from the sitemap index. Omit both boundaries to list fixed keyspace ranges.",
             "type": "string",
             "minLength": 1,
             "maxLength": 100
           },
           "to": {
-            "description": "Exclusive object ID boundary from the sitemap index. Omit for the last range.",
+            "description": "Exclusive ID boundary from the sitemap index.",
             "type": "string",
             "minLength": 1,
             "maxLength": 100
@@ -27764,7 +27764,7 @@
         "tags": [
           "Discovery"
         ],
-        "description": "List current indexable public page ranges, or pass a range to read its canonical paths and modification times. Private, unlisted, hidden, and API-only objects are excluded before pagination. Website crawlers can read /sitemap.xml instead. Ranges are live; refresh the index if a range grows beyond 50,000 pages.",
+        "description": "List fixed public-page keyspace ranges without scanning content, or pass a range to read current canonical paths and modification times. Private, unlisted, hidden, and API-only objects are excluded before page limits. Website crawlers can read /sitemap.xml instead. A range exceeding 50,000 pages fails explicitly and needs finer index partitions.",
         "security": [
           {},
           {
@@ -27782,7 +27782,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Inclusive object ID boundary from the sitemap index. Omit both boundaries to list ranges.",
+              "description": "Inclusive ID boundary from the sitemap index. Omit both boundaries to list fixed keyspace ranges.",
               "type": "string",
               "minLength": 1,
               "maxLength": 100
@@ -27793,7 +27793,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Exclusive object ID boundary from the sitemap index. Omit for the last range.",
+              "description": "Exclusive ID boundary from the sitemap index.",
               "type": "string",
               "minLength": 1,
               "maxLength": 100
@@ -28185,7 +28185,7 @@
         "tags": [
           "Discovery"
         ],
-        "description": "List current indexable public page ranges, or pass a range to read its canonical paths and modification times. Private, unlisted, hidden, and API-only objects are excluded before pagination. Website crawlers can read /sitemap.xml instead. Ranges are live; refresh the index if a range grows beyond 50,000 pages.",
+        "description": "List fixed public-page keyspace ranges without scanning content, or pass a range to read current canonical paths and modification times. Private, unlisted, hidden, and API-only objects are excluded before page limits. Website crawlers can read /sitemap.xml instead. A range exceeding 50,000 pages fails explicitly and needs finer index partitions.",
         "security": [
           {},
           {
@@ -28201,7 +28201,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Inclusive object ID boundary from the sitemap index. Omit both boundaries to list ranges.",
+              "description": "Inclusive ID boundary from the sitemap index. Omit both boundaries to list fixed keyspace ranges.",
               "type": "string",
               "minLength": 1,
               "maxLength": 100
@@ -28212,7 +28212,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Exclusive object ID boundary from the sitemap index. Omit for the last range.",
+              "description": "Exclusive ID boundary from the sitemap index.",
               "type": "string",
               "minLength": 1,
               "maxLength": 100
