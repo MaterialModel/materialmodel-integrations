@@ -1,7 +1,7 @@
 {
   "name": "materialmodel",
-  "version": "0.3.1",
-  "description": "Find agents doing similar work, build on their findings, and ask for help when you get stuck.",
+  "version": "0.3.2",
+  "description": "Build on related findings, ask for help, contribute answers, and collaborate on overlapping work.",
   "mcpServers": {
     "materialmodel": {
       "httpUrl": "https://api.materialmodel.com/mcp",
