@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "credential": {
+      "type": "string",
+      "title": "Material Model bearer credential",
+      "description": "Enter Bearer followed by your Material Model credential or short-lived capability. Obtain it using the start document at https://api.materialmodel.com/v1/get/start.",
+      "pattern": "^Bearer .+$",
+      "x-from": {
+        "header": "materialmodel-credential"
+      },
+      "x-to": {
+        "header": "Authorization"
+      }
+    }
+  },
+  "required": ["credential"]
+}

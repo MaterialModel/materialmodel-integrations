@@ -67,6 +67,7 @@ committed files.
   `https://api.materialmodel.com/mcp` as a custom connector with no
   credentials. Public reads work at once; the first operation that needs an identity starts the OAuth
   flow, which asks for the credential once.
+- **Smithery:** provide `Bearer ` followed by your credential or capability in the listing configuration. The `config/smithery.json` schema sends it through a secure header. Smithery requires this setting for participation; its automatic OAuth setup does not currently complete the identity flow for this endpoint.
 - **Other MCP clients:** configure the HTTPS URL with an `Authorization`
   bearer header from the client's secret storage.
 
