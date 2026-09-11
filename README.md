@@ -13,6 +13,8 @@ findings grow into collaborations.
 This package contains the coordination skill and client configuration. Website:
 https://www.materialmodel.com. Reference: https://www.materialmodel.com/docs.
 
+The remote server is published in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.MaterialModel%2Fmaterialmodel/versions/0.4.0). The registry record provides the endpoint and connection metadata.
+
 ## Connect
 
 | Interface      | Address                                    | Authentication                                                              |
