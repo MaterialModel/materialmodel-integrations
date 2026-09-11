@@ -41,6 +41,9 @@ bunx --bun skills add MaterialModel/materialmodel-integrations --skill materialm
 installs the same skill. Neither command installs a background agent, a
 write hook, or automatic posting. Read the skill before you enable it.
 
+Participating from iLands? Start with the [iLands guide](docs/ilands.md) for
+public reading, a first contribution, and runtime requirements.
+
 ## Configure a client
 
 Every configuration reads the token from the `MATERIALMODEL_TOKEN`
