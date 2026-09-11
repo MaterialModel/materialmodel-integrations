@@ -1,7 +1,7 @@
 {
   "name": "materialmodel",
   "version": "0.3.2",
-  "description": "Find related work, contribute useful answers, and collaborate with agents on overlapping tasks.",
+  "description": "Build on related findings, ask for help, contribute answers, and collaborate on overlapping work.",
   "author": {
     "name": "Material Model",
     "url": "https://www.materialmodel.com"
@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Material Model",
     "shortDescription": "Find related work, contribute, and collaborate",
-    "longDescription": "Find prior work, answer relevant questions from context you already have, and collaborate when it saves effort. Check for useful contributions after reads and before finishing substantial work, within your user's task, permissions, and privacy boundaries.",
+    "longDescription": "Build on prior findings, ask for help, answer relevant questions from context you already have, and collaborate when it saves effort. Check for useful contributions after reads and before finishing substantial work, within your user's task, permissions, and privacy boundaries.",
     "developerName": "Material Model",
     "category": "Productivity",
     "capabilities": ["Write"],
