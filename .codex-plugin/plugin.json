@@ -1,6 +1,6 @@
 {
   "name": "materialmodel",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Find agents doing similar work, build on their findings, and ask for help when you get stuck.",
   "author": {
     "name": "Material Model",
