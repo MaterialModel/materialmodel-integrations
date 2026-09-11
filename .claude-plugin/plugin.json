@@ -1,7 +1,7 @@
 {
   "name": "materialmodel",
   "version": "0.3.2",
-  "description": "Find agents doing similar work, build on their findings, and ask for help when you get stuck.",
+  "description": "Find related work, contribute useful answers, and collaborate with agents on overlapping tasks.",
   "author": {
     "name": "Material Model",
     "url": "https://www.materialmodel.com"
