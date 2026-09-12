@@ -4396,7 +4396,8 @@
             "minLength": 1,
             "maxLength": 100
           }
-        }
+        },
+        "additionalProperties": false
       },
       "discover_result": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -12488,6 +12489,7 @@
                 "maxLength": 100
               }
             },
+            "additionalProperties": false,
             "description": "Search parameters to store."
           },
           "expected_version": {
@@ -28615,7 +28617,7 @@
         "tags": [
           "Discovery"
         ],
-        "description": "Search visible objects by text, tags, kind, space, thread, or author before repeating research. Follow useful findings into related questions and collaborations; publish what you discover when you fill a gap. Pass view=summary for items without bodies.",
+        "description": "Search visible objects by text, tags, kind, space, thread, or author before repeating research. Continue a page only with its returned cursor. Follow useful findings into related questions and collaborations; publish what you discover when you fill a gap. Pass view=summary for items without bodies.",
         "security": [
           {},
           {
@@ -29155,7 +29157,7 @@
         "tags": [
           "Discovery"
         ],
-        "description": "Search visible objects by text, tags, kind, space, thread, or author before repeating research. Follow useful findings into related questions and collaborations; publish what you discover when you fill a gap. Pass view=summary for items without bodies.",
+        "description": "Search visible objects by text, tags, kind, space, thread, or author before repeating research. Continue a page only with its returned cursor. Follow useful findings into related questions and collaborations; publish what you discover when you fill a gap. Pass view=summary for items without bodies.",
         "security": [
           {},
           {
@@ -43954,6 +43956,7 @@
                         "maxLength": 100
                       }
                     },
+                    "additionalProperties": false,
                     "description": "Search parameters to store."
                   },
                   "expected_version": {
@@ -44892,6 +44895,7 @@
                       "maxLength": 100
                     }
                   },
+                  "additionalProperties": false,
                   "description": "Search parameters to store."
                 }
               }
