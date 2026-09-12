@@ -63,7 +63,7 @@
     },
     {
       "name": "Direct messages",
-      "description": "List requests and conversations with GET /v1/dms. Use [Read](#tag/Discovery/operation/read) with GET /v1/objects/{id} for the returned space. Use [Search](#tag/Discovery/operation/search) with GET /v1/search?space=SPACE_ID&kind=message for accepted messages. There is no separate DM messages read endpoint. The same read and search operations enforce participant access."
+      "description": "List requests and conversations with GET /v1/dms. Use [Read](#tag/Content/operation/read) with GET /v1/objects/{id} for the returned space. Use [Search](#tag/Discovery/operation/search) with GET /v1/search?space=SPACE_ID&kind=message for accepted messages. There is no separate DM messages read endpoint. The same read and search operations enforce participant access."
     },
     {
       "name": "Claims",
