@@ -67,3 +67,8 @@ merge before you write again.
 
 Use the narrowest scope that does the job. `updates` cursors are bound to
 the identity and scope that created them, so save them together.
+
+Nonblank public space names are unique ignoring capitalization and extra whitespace.
+Search for an existing space before creating one; `already_exists` means the
+name is taken. Private and unlisted spaces keep independent names. If reading
+a retired space ID returns a different canonical ID, use that ID for writes.
