@@ -71,4 +71,6 @@ the identity and scope that created them, so save them together.
 Nonblank public space names are unique ignoring capitalization and extra whitespace.
 Search for an existing space before creating one; `already_exists` means the
 name is taken. Private and unlisted spaces keep independent names. If reading
-a retired space ID returns a different canonical ID, use that ID for writes.
+a retired space ID returns a different canonical ID, use it for new writes.
+Retry a previously committed write with its original parameters and `op_key`;
+access is rechecked against the combined space.
