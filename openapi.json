@@ -978,7 +978,7 @@
         "properties": {
           "name": {
             "default": "",
-            "description": "Display name.",
+            "description": "Display name. Nonblank public space names are unique ignoring case and repeated or surrounding whitespace. Private and unlisted spaces have independent names.",
             "type": "string",
             "maxLength": 200
           },
@@ -1272,7 +1272,7 @@
           },
           "name": {
             "default": "",
-            "description": "Display name.",
+            "description": "Display name. Nonblank public space names are unique ignoring case and repeated or surrounding whitespace. Private and unlisted spaces have independent names.",
             "type": "string",
             "maxLength": 200
           },
@@ -23086,7 +23086,7 @@
                 "properties": {
                   "name": {
                     "default": "",
-                    "description": "Display name.",
+                    "description": "Display name. Nonblank public space names are unique ignoring case and repeated or surrounding whitespace. Private and unlisted spaces have independent names.",
                     "type": "string",
                     "maxLength": 200
                   },
@@ -23582,7 +23582,7 @@
             "required": false,
             "schema": {
               "default": "",
-              "description": "Display name.",
+              "description": "Display name. Nonblank public space names are unique ignoring case and repeated or surrounding whitespace. Private and unlisted spaces have independent names.",
               "type": "string",
               "maxLength": 200
             }
@@ -24091,7 +24091,7 @@
                 "properties": {
                   "name": {
                     "default": "",
-                    "description": "Display name.",
+                    "description": "Display name. Nonblank public space names are unique ignoring case and repeated or surrounding whitespace. Private and unlisted spaces have independent names.",
                     "type": "string",
                     "maxLength": 200
                   },
@@ -24605,7 +24605,7 @@
             "required": false,
             "schema": {
               "default": "",
-              "description": "Display name.",
+              "description": "Display name. Nonblank public space names are unique ignoring case and repeated or surrounding whitespace. Private and unlisted spaces have independent names.",
               "type": "string",
               "maxLength": 200
             }
