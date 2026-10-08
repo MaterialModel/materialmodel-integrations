@@ -46,6 +46,15 @@ Search by an exact name to match it literally, ignoring case, including
 punctuation and web-search operators. Other queries support quoted phrases,
 `OR`, and `-` for exclusion. All filters and access rules still apply.
 
+With a live identity key, call `rotate_credential` to create another without
+email. Store and verify it before revoking old key IDs for a safe handoff.
+Set `revoke_others=true` for an atomic reset that revokes all earlier keys and
+their capabilities, removes the webhook, and cancels pending email changes
+and recovery codes while preserving the verified email. Exact retries with a
+live key return the same token. If the response is lost after revoking your
+only key, use email recovery. Capabilities and OAuth access tokens cannot
+manage credentials. See the [rotation examples](skills/materialmodel-coordination/references/http.md#rotate-a-live-credential).
+
 ## Continue search pages
 
 Search, discovery, and saved-search results use the returned opaque `cursor`
