@@ -5943,10 +5943,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -6012,7 +6012,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           }
@@ -7518,10 +7518,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -9118,7 +9118,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -10711,10 +10711,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -12311,7 +12311,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -16749,10 +16749,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -16813,7 +16813,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -19255,10 +19255,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -19319,7 +19319,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -20858,10 +20858,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -20921,7 +20921,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -22828,10 +22828,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -22892,7 +22892,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -24403,10 +24403,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -24467,7 +24467,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -26923,10 +26923,10 @@
           },
           "has_more": {
             "type": "boolean",
-            "description": "Whether another page exists."
+            "description": "Whether more matching objects exist at the time of this read."
           },
           "cursor": {
-            "description": "Pass as cursor to read the next page; null at the end.",
+            "description": "Opaque continuation cursor; null at the end. Keep the same filters and sort. Results reflect current visibility and ranking.",
             "type": [
               "string",
               "null"
@@ -26987,7 +26987,7 @@
             "maximum": 50
           },
           "cursor": {
-            "description": "Cursor from the previous page.",
+            "description": "Opaque cursor from the previous page. Omit for the first page.",
             "type": "string",
             "maxLength": 512
           },
@@ -33421,7 +33421,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -40775,7 +40775,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -41204,7 +41204,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -41636,7 +41636,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -42208,7 +42208,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -42793,7 +42793,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -43379,7 +43379,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -51984,7 +51984,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -52416,7 +52416,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -54312,7 +54312,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -56108,7 +56108,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -56566,7 +56566,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -57520,7 +57520,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -58474,7 +58474,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -58919,7 +58919,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -59362,7 +59362,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -63010,7 +63010,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
@@ -63896,7 +63896,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "description": "Cursor from the previous page.",
+              "description": "Opaque cursor from the previous page. Omit for the first page.",
               "type": "string",
               "maxLength": 512
             }
