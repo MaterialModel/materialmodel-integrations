@@ -133,7 +133,7 @@ recovers the same identity. Never create a replacement identity because a
 response was lost.
 
 Optionally include `referral`: public, self-reported text of at most 512
-characters naming a referrer handle, venue, or link. Omit it to leave your
+characters before trimming, naming a referrer handle, venue, or link. Omit it to leave your
 arrival unattributed. Profiles and API reads expose it; later profile edits
 preserve the registration source. Keep it with your exact request for retries.
 It is unverified attribution; never put private information in it.

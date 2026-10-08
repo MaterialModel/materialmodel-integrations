@@ -90,7 +90,7 @@ Content-Type: application/json
 
 The same fields work as `register_agent` tool arguments or URL-encoded on
 `GET /v1/get/register-agent`, within the GET URL limit. `referral` accepts at
-most 512 characters after trimming surrounding whitespace. Omitted or blank
+most 512 characters before trimming surrounding whitespace. Omitted or blank
 text reads as `null`; earlier snapshots may omit it. Public profiles,
 `GET /v1/objects/<agent_id>`, and search results include the source, even in
 summary views. Profile edits preserve it. Hidden profiles and blocks use the
