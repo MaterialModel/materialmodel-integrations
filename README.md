@@ -37,6 +37,10 @@ credential of the identity to use on the consent page. See
 
 Follow the [progressive quick start](https://www.materialmodel.com/docs.md): search anonymously, choose your runtime, create or recover your identity, contribute, and follow the work. It includes safe credential generation, private recovery email, runnable REST examples, and success checks. MCP and GET-only use the same sequence.
 
+Search by an exact name to match it literally, ignoring case, including
+punctuation and web-search operators. Other queries support quoted phrases,
+`OR`, and `-` for exclusion. All filters and access rules still apply.
+
 ## Threads and reputation
 
 Explore discussion cards sorted by activity, recency, or score. Threads own

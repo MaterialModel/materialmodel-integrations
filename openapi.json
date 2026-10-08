@@ -3969,7 +3969,7 @@
                         "properties": {
                           "q": {
                             "default": "",
-                            "description": "Full-text query.",
+                            "description": "Full-text query. Case-insensitive exact names also match literally.",
                             "type": "string",
                             "maxLength": 200
                           },
@@ -5604,7 +5604,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -7179,7 +7179,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -8667,7 +8667,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -9133,7 +9133,7 @@
           },
           "q": {
             "default": "",
-            "description": "Full-text query.",
+            "description": "Full-text query. Case-insensitive exact names also match literally.",
             "type": "string",
             "maxLength": 200
           },
@@ -10372,7 +10372,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -11860,7 +11860,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -12326,7 +12326,7 @@
           },
           "q": {
             "default": "",
-            "description": "Full-text query.",
+            "description": "Full-text query. Case-insensitive exact names also match literally.",
             "type": "string",
             "maxLength": 200
           },
@@ -13728,7 +13728,7 @@
                               "properties": {
                                 "q": {
                                   "default": "",
-                                  "description": "Full-text query.",
+                                  "description": "Full-text query. Case-insensitive exact names also match literally.",
                                   "type": "string",
                                   "maxLength": 200
                                 },
@@ -16410,7 +16410,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -18916,7 +18916,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -20503,7 +20503,7 @@
                               "properties": {
                                 "q": {
                                   "default": "",
-                                  "description": "Full-text query.",
+                                  "description": "Full-text query. Case-insensitive exact names also match literally.",
                                   "type": "string",
                                   "maxLength": 200
                                 },
@@ -21100,7 +21100,7 @@
                     "properties": {
                       "q": {
                         "default": "",
-                        "description": "Full-text query.",
+                        "description": "Full-text query. Case-insensitive exact names also match literally.",
                         "type": "string",
                         "maxLength": 200
                       },
@@ -21255,7 +21255,7 @@
             "properties": {
               "q": {
                 "default": "",
-                "description": "Full-text query.",
+                "description": "Full-text query. Case-insensitive exact names also match literally.",
                 "type": "string",
                 "maxLength": 200
               },
@@ -22489,7 +22489,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -24064,7 +24064,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -26584,7 +26584,7 @@
                           "properties": {
                             "q": {
                               "default": "",
-                              "description": "Full-text query.",
+                              "description": "Full-text query. Case-insensitive exact names also match literally.",
                               "type": "string",
                               "maxLength": 200
                             },
@@ -41661,7 +41661,7 @@
             "required": false,
             "schema": {
               "default": "",
-              "description": "Full-text query.",
+              "description": "Full-text query. Case-insensitive exact names also match literally.",
               "type": "string",
               "maxLength": 200
             }
@@ -42233,7 +42233,7 @@
             "required": false,
             "schema": {
               "default": "",
-              "description": "Full-text query.",
+              "description": "Full-text query. Case-insensitive exact names also match literally.",
               "type": "string",
               "maxLength": 200
             }
@@ -42818,7 +42818,7 @@
             "required": false,
             "schema": {
               "default": "",
-              "description": "Full-text query.",
+              "description": "Full-text query. Case-insensitive exact names also match literally.",
               "type": "string",
               "maxLength": 200
             }
@@ -43404,7 +43404,7 @@
             "required": false,
             "schema": {
               "default": "",
-              "description": "Full-text query.",
+              "description": "Full-text query. Case-insensitive exact names also match literally.",
               "type": "string",
               "maxLength": 200
             }
@@ -57028,7 +57028,7 @@
                     "properties": {
                       "q": {
                         "default": "",
-                        "description": "Full-text query.",
+                        "description": "Full-text query. Case-insensitive exact names also match literally.",
                         "type": "string",
                         "maxLength": 200
                       },
@@ -57968,7 +57968,7 @@
                   "properties": {
                     "q": {
                       "default": "",
-                      "description": "Full-text query.",
+                      "description": "Full-text query. Case-insensitive exact names also match literally.",
                       "type": "string",
                       "maxLength": 200
                     },

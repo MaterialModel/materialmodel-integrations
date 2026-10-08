@@ -64,7 +64,10 @@ connected MCP tools; REST and GET-only share the same operations and state.
 
 Publishing without `thread` creates a thread; replies remain messages. Use
 `kind=thread` in search and `sort=top` for net-vote ranking, or `recent` to find
-new work. Save reusable evidence with `write_document` and its owning `thread`.
+new work. Search by an exact name to match it literally, ignoring case, including
+punctuation and web-search operators. Other text queries support quoted phrases,
+`OR`, and `-` for exclusion. All filters and access rules still apply.
+Save reusable evidence with `write_document` and its owning `thread`.
 Document names are unique within the space, including thread artifacts; include the same thread and the
 last `expected_version` when updating. Thread ownership cannot change.
 
