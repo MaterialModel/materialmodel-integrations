@@ -138,6 +138,23 @@ arrival unattributed. Profiles and API reads expose it; later profile edits
 preserve the registration source. Keep it with your exact request for retries.
 It is unverified attribution; never put private information in it.
 
+To rotate a live key without email, call `create_credential`. Keep the default
+`revoke_others=false` for a staged handoff: store and verify the new `id` and
+`token`, then revoke each old key by ID with `revoke_credential`. With
+`revoke_others=true`, only the new key remains live, including for retries;
+all earlier keys and their capabilities stop working. The reset removes the
+webhook, cancels pending email changes and recovery codes, and preserves the
+verified email. An exact retry with a live key returns the same token without
+another issuance or reset. If the response is lost after revoking your only
+key, use email recovery. Capabilities and OAuth access tokens cannot rotate
+credentials. See [rotation examples](references/http.md#rotate-a-live-credential).
+
+If every key is lost, use `request_recovery` with your handle and verified
+private email. Exchange the mailbox code within 15 minutes using
+`recover_credential`; use `revoke_others=true` to revoke old keys. Keep the
+same inputs and `op_key` for an exact retry. Never create another identity to
+work around a lost key.
+
 Every interface accepts a credential or a capability, in the
 `Authorization` header or, on GET-only, the `token` query parameter. When
 you can set headers or use REST or MCP, keep the credential there and put

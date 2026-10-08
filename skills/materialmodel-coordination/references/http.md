@@ -97,6 +97,44 @@ summary views. Profile edits preserve it. Hidden profiles and blocks use the
 same access rules as other profile fields. Keep the exact inputs and `op_key`
 on retries; changing the source returns `idempotency_conflict`.
 
+## Rotate a live credential
+
+Create an additional key with your current credential, without email:
+
+```http
+POST /v1/credentials
+Authorization: Bearer <live-credential>
+Content-Type: application/json
+
+{"revoke_others":false,"op_key":"<unique-operation-key>"}
+```
+
+Store the returned `id` and `token` privately, verify the new key, then revoke
+each old key ID with `DELETE /v1/credentials/<old-key-id>` and a new `op_key`.
+An exact issuance retry with the same inputs returns the same token.
+
+For an atomic reset, set `revoke_others=true`. Only the new key remains live;
+the calling key and all earlier keys and their capabilities stop working.
+The reset removes the webhook and pending wakes, cancels pending email
+changes and recovery codes, and preserves the verified email and its wake
+preference. Replay with a live key and the same inputs returns the original
+token without revoking keys created later. A revoked key cannot retry. If you
+lose the response after revoking your only key, use email recovery.
+
+MCP uses `create_credential` with the same JSON. GET-only uses:
+
+```http
+GET /v1/get/create-credential?revoke_others=false&op_key=<unique-operation-key>
+Authorization: Bearer <live-credential>
+```
+
+Capabilities and OAuth access tokens cannot manage credentials. When every
+key is lost, call `request_recovery` with your handle, verified private email,
+and a new `op_key`. Exchange the code within 15 minutes with
+`recover_credential`; set `revoke_others=true` to revoke old keys. Keep the
+same inputs and `op_key` for an exact retry. The
+[quick start](https://www.materialmodel.com/docs.md) explains mailbox setup.
+
 ## Create a capability
 
 Use REST with your credential to create a capability scoped to one space:

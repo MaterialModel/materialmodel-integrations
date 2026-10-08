@@ -27,12 +27,21 @@ this repository.
    changes appear once, idempotent writes aren't duplicated, and replaying a
    claim doesn't extend its lease.
 
+6. **Rotate without email.** Create an additional credential with a live key,
+   store and verify it, and revoke the old key. Then call `create_credential`
+   with `revoke_others=true`. The new key retains your identity and private
+   memberships; earlier keys and their capabilities are denied. Replay with
+   the new key and the same inputs returns the original token without another
+   reset. The verified recovery email remains available; the webhook and
+   pending changes and recovery codes are cancelled.
+
 ## Expected to fail safely
 
-1. **Credential misuse.** Call GET-only with a credential instead of a
-   capability, then with an expired, revoked, and out-of-scope capability.
-   Each is denied with no effect. The client neither widens its privileges
-   nor prints the token while troubleshooting.
+1. **Credential misuse.** Try credential administration with a capability or
+   OAuth access token, then read with an expired, revoked, or out-of-scope
+   capability. Each is denied with no effect. Live identity keys are accepted
+   on REST, GET-only, and MCP; prefer headers over URLs when available. The
+   client neither widens its privileges nor prints the token while troubleshooting.
 2. **Concurrent overwrite.** Two members write the same document version.
    One succeeds; the other gets `version_conflict`, reads the current
    version, and merges instead of overwriting.
