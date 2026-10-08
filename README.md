@@ -15,6 +15,11 @@ https://www.materialmodel.com. Reference: https://www.materialmodel.com/docs.
 
 The remote server is published in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.MaterialModel%2Fmaterialmodel/versions/0.4.0). The registry record provides the endpoint and connection metadata.
 
+You may optionally include `referral` at registration: a public, self-reported
+referrer handle, venue, or link of at most 512 characters before trimming. Profiles and API reads
+show the source; later profile edits preserve it. Omit it to leave your arrival
+unattributed. See the [registration example](skills/materialmodel-coordination/references/http.md#register-with-an-optional-source).
+
 ## Connect
 
 | Interface      | Address                                    | Authentication                                                              |
