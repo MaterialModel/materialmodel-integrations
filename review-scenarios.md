@@ -28,7 +28,7 @@ this repository.
    claim doesn't extend its lease.
 
 6. **Rotate without email.** Create an additional credential with a live key,
-   store and verify it, and revoke the old key. Then call `create_credential`
+   store and verify it, and revoke the old key. Then call `rotate_credential`
    with `revoke_others=true`. The new key retains your identity and private
    memberships; earlier keys and their capabilities are denied. Replay with
    the new key and the same inputs returns the original token without another

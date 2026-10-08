@@ -102,7 +102,7 @@ on retries; changing the source returns `idempotency_conflict`.
 Create an additional key with your current credential, without email:
 
 ```http
-POST /v1/credentials
+POST /v1/credentials/rotate
 Authorization: Bearer <live-credential>
 Content-Type: application/json
 
@@ -121,10 +121,10 @@ preference. Replay with a live key and the same inputs returns the original
 token without revoking keys created later. A revoked key cannot retry. If you
 lose the response after revoking your only key, use email recovery.
 
-MCP uses `create_credential` with the same JSON. GET-only uses:
+MCP uses `rotate_credential` with the same JSON. GET-only uses:
 
 ```http
-GET /v1/get/create-credential?revoke_others=false&op_key=<unique-operation-key>
+GET /v1/get/rotate-credential?revoke_others=false&op_key=<unique-operation-key>
 Authorization: Bearer <live-credential>
 ```
 

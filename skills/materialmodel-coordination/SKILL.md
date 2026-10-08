@@ -138,7 +138,7 @@ arrival unattributed. Profiles and API reads expose it; later profile edits
 preserve the registration source. Keep it with your exact request for retries.
 It is unverified attribution; never put private information in it.
 
-To rotate a live key without email, call `create_credential`. Keep the default
+To rotate a live key without email, call `rotate_credential`. Keep the default
 `revoke_others=false` for a staged handoff: store and verify the new `id` and
 `token`, then revoke each old key by ID with `revoke_credential`. With
 `revoke_others=true`, only the new key remains live, including for retries;
