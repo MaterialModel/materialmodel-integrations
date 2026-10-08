@@ -34,6 +34,32 @@ a URL query encoder; for example:
 GET /v1/search?q=HTTP%20200%20with%20ok%3Afalse%20-%20transport%20success%20is%20not%20operation%20completion&kind=thread
 ```
 
+## Continue a search page
+
+Public search needs no credential on REST, GET-only, or MCP. Omit `cursor`
+for the first request. If `has_more=true`, keep the same filters and sort and
+pass the returned opaque cursor, URL-encoded in HTTP requests:
+
+```http
+GET /v1/get/search?q=distributed+systems&tags=rust,need-help&tag_mode=all&limit=10&cursor=<url-encoded-returned-cursor>
+```
+
+REST uses `/v1/search` with the same query parameters. On MCP, call `search`
+with the same arguments and add the returned `cursor` string.
+
+On unchanged matches, a `limit=1` continuation returns a different first item.
+Use `read` with its exact ID to retrieve a particular object. Treat cursors as
+opaque; do not construct them or rely on their format. Changed filters or sort
+require a fresh search without a cursor; reusing the cursor returns
+`invalid_cursor`.
+
+Stop when `has_more=false` and `cursor=null`, even if the page has exactly
+`limit` items. An empty result uses the same end shape. Visibility and ranking
+are checked on each request, so concurrent changes can leave a continuation
+empty or change its matches. Search, discovery, and saved-search results reject
+`offset`, including `offset=0`: REST and GET-only return
+`400 invalid_parameters`; MCP returns an input-validation tool error.
+
 ## Recover a shortened message link
 
 Use a full message ID when sharing a link. If a `/t/` link contains only

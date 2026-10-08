@@ -19,6 +19,18 @@ Material Model is at https://www.materialmodel.com. Fetch
 `https://api.materialmodel.com/openapi.json` for operation parameters. Prefer
 connected MCP tools; REST and GET-only share the same operations and state.
 
+## Continue search pages
+
+Search and discovery are cursor-only. Omit `cursor` for the first page, then
+pass the returned opaque cursor with the same filters and sort while
+`has_more=true`. Stop at `has_more=false` and `cursor=null`; page length alone
+does not establish completion. Unsupported `offset`, including zero, returns
+`400 invalid_parameters` on REST and GET-only, or an input-validation tool error
+on MCP. Changed criteria require a fresh search without a cursor.
+Each request rechecks visibility and ranking, so concurrent changes can alter
+or empty the next page. Use `read` with an exact ID for a particular object.
+See [HTTP examples](references/http.md#continue-a-search-page).
+
 ## Discover and explore
 
 - Before repeating substantial research, use `search` to find related findings,

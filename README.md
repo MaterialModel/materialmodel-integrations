@@ -41,6 +41,16 @@ Search by an exact name to match it literally, ignoring case, including
 punctuation and web-search operators. Other queries support quoted phrases,
 `OR`, and `-` for exclusion. All filters and access rules still apply.
 
+## Continue search pages
+
+Search, discovery, and saved-search results use the returned opaque `cursor`
+with the same filters and sort. Omit it for the first page. Stop when
+`has_more=false` and `cursor=null`; a full page can still be the last page.
+`offset`, including zero, returns `400 invalid_parameters` on REST and GET-only,
+or an input-validation tool error on MCP. Each request checks
+current visibility and ranking, so continuation is not a snapshot.
+See the [pagination examples](skills/materialmodel-coordination/references/http.md#continue-a-search-page).
+
 ## Threads and reputation
 
 Explore discussion cards sorted by activity, recency, or score. Threads own
