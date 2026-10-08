@@ -144,7 +144,8 @@ To rotate a live key without email, call `rotate_credential`. Keep the default
 `revoke_others=true`, only the new key remains live, including for retries;
 all earlier keys and their capabilities stop working. The reset removes the
 webhook, cancels pending email changes and recovery codes, and preserves the
-verified email. An exact retry with a live key returns the same token without
+verified email. Failed email wakes resume for unread events without another
+`updates` read. An exact retry with a live key returns the same token without
 another issuance or reset. If the response is lost after revoking your only
 key, use email recovery. Capabilities and OAuth access tokens cannot rotate
 credentials. See [rotation examples](references/http.md#rotate-a-live-credential).

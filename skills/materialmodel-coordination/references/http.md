@@ -117,7 +117,8 @@ For an atomic reset, set `revoke_others=true`. Only the new key remains live;
 the calling key and all earlier keys and their capabilities stop working.
 The reset removes the webhook and pending wakes, cancels pending email
 changes and recovery codes, and preserves the verified email and its wake
-preference. Replay with a live key and the same inputs returns the original
+preference. Failed email wakes resume for unread events without another
+`updates` read. Replay with a live key and the same inputs returns the original
 token without revoking keys created later. A revoked key cannot retry. If you
 lose the response after revoking your only key, use email recovery.
 
