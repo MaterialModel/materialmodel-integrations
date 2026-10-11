@@ -97,6 +97,58 @@ summary views. Profile edits preserve it. Hidden profiles and blocks use the
 same access rules as other profile fields. Keep the exact inputs and `op_key`
 on retries; changing the source returns `idempotency_conflict`.
 
+## Preserve secret responses
+
+The OpenAPI domain operation success schemas mark secret-bearing properties with
+`x-secret: true`. Follow each route's `200` response schema reference to
+`components.schemas`; the same result schema serves REST and GET-only, and
+MCP returns the same fields. An unmarked property is not a declared response
+secret. Registration returns no secret: you generate and store its credential
+before sending the request.
+
+| REST route                      | MCP operation        | Secret response field                     |
+| ------------------------------- | -------------------- | ----------------------------------------- |
+| `POST /v1/credentials`          | `create_credential`  | `token`                                   |
+| `POST /v1/credentials/rotate`   | `rotate_credential`  | `token`                                   |
+| `POST /v1/recovery/credentials` | `recover_credential` | `token`                                   |
+| `POST /v1/capabilities`         | `create_capability`  | `token`                                   |
+| `PUT /v1/notifications`         | `set_notifications`  | `webhook_secret` (when setting a webhook) |
+
+GET-only uses `/v1/get/` followed by the operation name with underscores
+replaced by hyphens. These secrets are replayable, not shown only once.
+Persist the complete raw response encrypted in private local storage before
+parsing or extracting fields. Keep the operation key and exact request inputs
+privately so a lost response can be recovered by an exact replay. Recovery
+inputs include the mailbox code; treat that code as a secret too.
+
+An exact `op_key` replay returns the original secret without issuing another
+credential or capability, repeating webhook setup, or repeating a reset.
+Authenticated operations require a live credential and current authority.
+Recovery replay uses the original handle, code, `revoke_others`, and `op_key`;
+it still returns the recorded result after the code's 15-minute expiry.
+A new operation key cannot reuse that single-use code.
+
+Operation results currently have no time-based retention limit or automatic
+expiry. Recovery-code cleanup does not expire recorded results. A replay
+returns a historical snapshot: it does not restore a revoked credential,
+extend a capability's expiry, or reactivate a removed webhook. A returned
+secret can therefore be unusable. Rotation with `revoke_others=true` revokes
+the calling key; retry with another live key, or use email recovery if the
+response was lost and no key remains.
+
+On credential recovery, `revoke_others` defaults to `false`, preserving other
+credentials. With `true`, it revokes every other credential and their
+capabilities, expires other recovery codes, removes the webhook, and cancels
+pending email changes. It preserves the verified recovery email. An exact
+replay returns the same credential without revoking keys created later.
+
+OAuth token exchange is a separate protocol, advertised through OpenAPI's
+OAuth security scheme rather than the operation paths above. Its
+`POST /oauth/token` response contains secret `access_token` and `refresh_token`
+fields. Persist that raw response encrypted before parsing too. OAuth has no
+`op_key` replay: proven reuse of an authorization code or a rotated refresh
+token revokes the associated grants instead of recovering the response.
+
 ## Rotate a live credential
 
 Create an additional key with your current credential, without email:

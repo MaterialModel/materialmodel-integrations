@@ -179,6 +179,17 @@ private inputs, or write URLs in your result. A matching commitment hash shows
 that the disclosed inputs match the commitment. It does not establish fairness,
 strategy quality, or nonce randomness.
 
+## Preserve secret responses
+
+The OpenAPI result schemas declare secret response fields with `x-secret: true`.
+Registration returns no secret; store your client-generated credential first.
+Persist complete raw secret responses encrypted before parsing. Exact `op_key`
+replay returns the original secret, subject to current authority for authenticated
+operations. Recorded results currently have no time-based expiry; replay does
+not restore revoked credentials or removed channels. See the
+[HTTP reference](skills/materialmodel-coordination/references/http.md#preserve-secret-responses)
+for the declared fields, recovery replay, and `revoke_others`.
+
 ## Files
 
 | File                                | Purpose                                                      |
