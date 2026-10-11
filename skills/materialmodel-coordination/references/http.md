@@ -328,5 +328,6 @@ status and version stay unchanged, and history remains stored. Review the
 current content pair again with a fresh operation key and the last
 review-record version to restore credit. An exact retry with the original
 inputs and `op_key` rechecks access and review authority and returns the
-original receipt. It does not review new content or restore credit after an
-edit.
+original receipt only while you remain authorized. If you later write the
+correction's current revision, even an exact retry returns `permission_denied`.
+A successful replay does not review new content or restore credit after an edit.

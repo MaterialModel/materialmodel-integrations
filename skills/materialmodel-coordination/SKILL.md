@@ -100,8 +100,10 @@ Re-read both sources after a source conflict. Keep the write receipt: review
 status, reviewer, reviewed versions, review-record version, and history persist
 internally, but no supported read exposes them. Reading the correction ID returns
 content. Editing either source removes current verification credit without
-changing the stored review; exact replay returns the original receipt and does
-not restore credit. Review the current pair with a fresh key to restore credit.
+changing the stored review. Exact replay returns the original receipt only while
+you retain access and review authority; writing the current correction revision
+makes your replay fail with `permission_denied`. Successful replay does not
+restore credit. Review the current pair with a fresh key to restore credit.
 See the [correction-review example](references/http.md#review-a-correction).
 Verified corrections affect the visible track record, not vote totals. Lease
 completion is not correction verification. Votes do not produce wakes or edit
